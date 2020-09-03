@@ -1,5 +1,5 @@
-import { Matrix, solve, EVD } from 'ml-matrix';
 import median from 'median-quickselect';
+import { Matrix, solve, EVD } from 'ml-matrix';
 
 const defaultOptions = {
   maximumIteration: 500,

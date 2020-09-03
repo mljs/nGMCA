@@ -1,5 +1,6 @@
-import { Matrix } from 'ml-matrix';
 import { toBeDeepCloseTo } from 'jest-matcher-deep-close-to';
+import { Matrix } from 'ml-matrix';
+
 import { ngmca } from '../index';
 
 expect.extend({ toBeDeepCloseTo });
