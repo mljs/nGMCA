@@ -1,0 +1,57 @@
+{
+  "name": "ml-ngmca",
+  "version": "0.0.0",
+  "description": "non-negative Generalized Morphological Component Analysis",
+  "main": "lib/index.js",
+  "module": "src/index.js",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "eslint": "eslint src",
+    "eslint-fix": "npm run eslint -- --fix",
+    "prepublishOnly": "rollup -c",
+    "test": "npm run test-coverage && npm run eslint",
+    "test-coverage": "jest --coverage",
+    "test-only": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mljs/nGMCA.git"
+  },
+  "keywords": [],
+  "author": "jobo322 &lt;jose.bolanos@correounivalle.edu.co&gt;",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mljs/nGMCA/issues"
+  },
+  "homepage": "https://github.com/mljs/nGMCA#readme",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "all"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
+    "@types/jest": "^26.0.13",
+    "eslint": "^7.8.1",
+    "eslint-config-cheminfo": "^5.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.20.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.4.2",
+    "prettier": "^2.1.1",
+    "rollup": "^2.26.9"
+  },
+  "dependencies": {
+    "jest-matcher-deep-close-to": "^2.0.1",
+    "median-quickselect": "^1.0.1",
+    "ml-matrix": "^6.5.1"
+  }
+}
