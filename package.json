@@ -9,6 +9,7 @@
     "src"
   ],
   "scripts": {
+    "build": "rollup -c && cheminfo-build --root NGCMA",
     "eslint": "eslint src",
     "eslint-fix": "npm run eslint -- --fix",
     "prepublishOnly": "rollup -c",
@@ -40,17 +41,18 @@
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.10.4",
     "@types/jest": "^26.0.13",
+    "cheminfo-build": "^1.1.4",
     "eslint": "^7.8.1",
     "eslint-config-cheminfo": "^5.1.1",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jest": "^23.20.0",
     "eslint-plugin-prettier": "^3.1.4",
     "jest": "^26.4.2",
+    "jest-matcher-deep-close-to": "^2.0.1",
     "prettier": "^2.1.1",
     "rollup": "^2.26.9"
   },
   "dependencies": {
-    "jest-matcher-deep-close-to": "^2.0.1",
     "median-quickselect": "^1.0.1",
     "ml-matrix": "^6.5.1"
   }
