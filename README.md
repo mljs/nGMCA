@@ -6,6 +6,12 @@
 ## Instalation
 `$ npm install ml-ngmca `
 
+## [API Documentation](https://mljs.github.io/nGMCA/)
+
+This algorithm is based on the article [Jérémy Rapin, Jérôme Bobin, Anthony Larue, Jean-Luc Starck. Sparse and Non-negative BSS for Noisy Data, IEEE Transactions on Signal Processing, 2013.IEEE Transactions on Signal Processing, vol. 61, issue 22, p. 5620-5632, 2013.](https://arxiv.org/pdf/1308.5546.pdf)
+
+In order to get a general idea of the problem you could also check the [Wikipedia article](https://en.wikipedia.org/wiki/Non-negative_matrix_factorization).
+
 ## Usage
 
 ```js
