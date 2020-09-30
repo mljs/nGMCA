@@ -1,6 +1,8 @@
 import { Matrix, EVD } from 'ml-matrix';
 
-import { zeroInsteanOfNegative, normBy, normProj } from '../util';
+import { normBy } from '../util/normBy';
+import { normProj } from '../util/normProj';
+import { zeroInsteadOfNegative } from '../util/zeroInsteadOfNegative';
 
 export function updateMatrixA(Ainit, S, originalMatrix, options) {
   let {
@@ -23,9 +25,9 @@ export function updateMatrixA(Ainit, S, originalMatrix, options) {
   if (normConstrained) {
     let normLimits = normBy(Ainit, 'column');
     proximal = (x, threshold) =>
-      normProj(zeroInsteanOfNegative(x.subS(threshold)), normLimits);
+      normProj(zeroInsteadOfNegative(x.subS(threshold)), normLimits);
   } else {
-    proximal = (x, threshold) => zeroInsteanOfNegative(x.subS(threshold));
+    proximal = (x, threshold) => zeroInsteadOfNegative(x.subS(threshold));
   }
 
   for (let i = 0; i < maxFBIteration; i++) {

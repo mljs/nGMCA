@@ -1,6 +1,7 @@
 import { Matrix, EVD } from 'ml-matrix';
 
-import { zeroInsteanOfNegative, getMax } from '../util';
+import { getMax } from '../util/getMax';
+import { zeroInsteadOfNegative } from '../util/zeroInsteadOfNegative';
 
 export function updateMatrixS(A, Sinit, originalMatrix, lambda, options) {
   let { maxFBIteration, toleranceFB } = options;
@@ -13,7 +14,7 @@ export function updateMatrixS(A, Sinit, originalMatrix, lambda, options) {
   let S = Sinit.clone();
   let prevS = S.clone();
   let gradient = (s) => H.mmul(s).sub(AtY);
-  let proximal = (x, threshold) => zeroInsteanOfNegative(x.subS(threshold));
+  let proximal = (x, threshold) => zeroInsteadOfNegative(x.subS(threshold));
 
   for (let i = 0; i < maxFBIteration; i++) {
     let tNext = (1 + Math.sqrt(1 + 4 * t * t)) / 2;

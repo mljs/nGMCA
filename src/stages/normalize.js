@@ -1,6 +1,6 @@
 import { Matrix } from 'ml-matrix';
 
-import { normBy } from '../util';
+import { normBy } from '../util/normBy';
 
 export function normalize(data, options) {
   const { normOnA } = options;

@@ -1,6 +1,6 @@
 import { Matrix } from 'ml-matrix';
 
-export function zeroInsteanOfNegative(X) {
+export function zeroInsteadOfNegative(X) {
   let rows = X.rows;
   let columns = X.columns;
   let newMatrix = new Matrix(X);

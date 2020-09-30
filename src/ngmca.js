@@ -1,13 +1,11 @@
 import { Matrix } from 'ml-matrix';
 
-import {
-  checkMatrixS,
-  initialize,
-  normalize,
-  updateLambda,
-  updateMatrixA,
-  updateMatrixS,
-} from './stages';
+import { checkMatrixS } from './stages/checkMatrixS';
+import { initialize } from './stages/initialize';
+import { normalize } from './stages/normalize';
+import { updateLambda } from './stages/updateLambda';
+import { updateMatrixA } from './stages/updateMatrixA';
+import { updateMatrixS } from './stages/updateMatrixS';
 
 /**
  * Performing non-negative matrix factorization solving argmin_(A >= 0, S >= 0) 1 / 2 * ||Y - AS||_2^2 + lambda * ||S||_1

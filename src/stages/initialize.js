@@ -1,6 +1,6 @@
 import { Matrix, solve } from 'ml-matrix';
 
-import { zeroInsteanOfNegative } from '../util';
+import { zeroInsteadOfNegative } from '../util/zeroInsteadOfNegative';
 
 import { checkMatrixS } from './checkMatrixS';
 import { updateMatrixA } from './updateMatrixA';
@@ -32,7 +32,7 @@ export function initialize(originalMatrix, options = {}) {
     }
     positiveSumColumnA = new Matrix(positiveSumColumnA);
     //resolve the system of equation Lx = originalMatrix for x, then select just non negative values;
-    let candidateS = zeroInsteanOfNegative(
+    let candidateS = zeroInsteadOfNegative(
       solve(positiveSumColumnA.transpose(), originalMatrix),
     );
     //set the S matrix with dimensions k x c
@@ -61,7 +61,7 @@ export function initialize(originalMatrix, options = {}) {
       originalMatrix.transpose(),
     );
 
-    candidateA = zeroInsteanOfNegative(candidateA.transpose());
+    candidateA = zeroInsteadOfNegative(candidateA.transpose());
 
     let cIndex = 0;
     result.A = Matrix.zeros(rows, rank);

@@ -1,6 +1,6 @@
 import { Matrix } from 'ml-matrix';
 
-import { dimMADstd } from '../util';
+import { dimMADstd } from '../util/dimMADstd';
 
 export function updateLambda(data, originalMatrix, options = {}) {
   let { refinementBeginning, tauMAD } = options;

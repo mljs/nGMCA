@@ -1,6 +1,6 @@
 import { Matrix } from 'ml-matrix';
 
-import { zeroInsteanOfNegative } from '../util';
+import { zeroInsteadOfNegative } from '../util/zeroInsteadOfNegative';
 
 export function checkMatrixS(data, originalMatrix) {
   let { A, S } = data;
@@ -46,7 +46,7 @@ function fastExtractNMF(residual, r) {
   let A = Matrix.zeros(rows, r);
   let S = Matrix.zeros(r, columns);
   for (let i = 0; i < r; i++) {
-    residual = zeroInsteanOfNegative(residual);
+    residual = zeroInsteadOfNegative(residual);
     if (residual.sum() === 0) continue;
     let res2 = Matrix.pow(residual, 2).sum('column');
     //find the max of the first column
