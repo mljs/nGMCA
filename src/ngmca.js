@@ -9,6 +9,22 @@ import {
   updateMatrixS,
 } from './stages';
 
+/**
+ * Performing non-negative matrix factorization solving argmin_(A >= 0, S >= 0) 1 / 2 * ||Y - AS||_2^2 + lambda * ||S||_1
+ * @param {*} originalMatrix - Matrix to be separated.
+ * @param {Number} rank - The maximum number of linearly independent column/row vectors in the matrix.
+ * @param {Object} options - Options of ngmca factorization method.
+ * @param {Number} [options.maximumIteration = 500] - Maximum number of iterations.
+ * @param {Number} [options.maxFBIteration = 80] - Maximum number of iterations of the Forward-Backward subroutine.
+ * @param {Object} [options.randGenerator = Math.random] - Random number generator for the subroutine of initialization.
+ * @param {Number} [options.maxInitFBIteration = 50] - Maximum number of iterations of the Forward-Backward subroutine at the initialization.
+ * @param {Number} [options.toleranceFB = 1e-5] - relative difference tolerance for convergence of the Forward-Backward sub-iterations.
+ * @param {Number} [options.toleranceFBInit = 0] - relative difference tolerance for convergence of the Forward-Backward sub-iterations at the initialization.
+ * @param {Number} [options.phaseRatio = 0.8] - transition between decreasing thresholding phase and refinement phase in percent of the iterations.
+ * @param {Number} [options.tauMAD = 1] - constant coefficient for the final threshold computation.
+ * @param {Boolean} [options.useTranspose = false] - if true the originalMatrix is transposed.
+ */
+
 export function ngmca(originalMatrix, rank, options = {}) {
   const {
     maximumIteration = 500,
