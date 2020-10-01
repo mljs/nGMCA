@@ -14,6 +14,10 @@ In order to get a general idea of the problem you could also check the [Wikipedi
 
 ## Usage
 
+You will be able to separate the components of a mixture if you have a series of measurements correlated by a composition profile e.g NMR or mass spectra coming from a chromatographic coupled technique of two or more close retention times. So you will have a matrix with a number of rows greater than the number of pure components of the mixture.
+
+
+
 ```js
 import { Matrix } from 'ml-matrix';
 import { ngmca } from 'ml-ngmca';

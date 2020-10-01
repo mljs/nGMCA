@@ -46,6 +46,7 @@ export function initialize(originalMatrix, options = {}) {
         }
       }
     }
+    console.log('result', result.S)
     //select rows with positive sum by row
     let sumR = result.S.sum('row');
     let positiveSumRowS = [];
@@ -56,6 +57,7 @@ export function initialize(originalMatrix, options = {}) {
     positiveSumRowS = new Matrix(positiveSumRowS);
 
     // solve the system of linear equation xY = S
+    console.log(positiveSumRowS.transpose(), originalMatrix.transpose())
     let candidateA = solve(
       positiveSumRowS.transpose(),
       originalMatrix.transpose(),
