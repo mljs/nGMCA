@@ -1,8 +1,11 @@
-# nGMCA - Non-negative Generalized Morphological Component Analysis
-<p align="center">
-  A tool for Non-negative matrix factorization.
-</p>
+# nGMCA - non-negative Generalized Morphological Component Analysis
 
+<p align="center">
+  <img alt="NMReDATA" src="image/nonNegativeMatrixFactorization.png">
+</p>
+<p align="center">
+  A tool for non-negative matrix factorization.
+</p>
 ## Instalation
 `$ npm install ml-ngmca `
 
@@ -14,27 +17,36 @@ In order to get a general idea of the problem you could also check the [Wikipedi
 
 ## Usage
 
+You will be able to separate the components of a mixture if you have a series of measurements correlated by a composition profile e.g NMR or mass spectra coming from a chromatographic coupled technique of two or more close retention times. So you will have a matrix with a number of rows equal or greater than the number of pure components of the mixture.
+
 ```js
 import { Matrix } from 'ml-matrix';
 import { ngmca } from 'ml-ngmca';
 
-let A = new Matrix([
-  [1, 2, 3],
-  [4, 5, 6],
-]);
-let S = new Matrix([
-  [1, 2],
-  [3, 4],
-  [5, 6],
+let pureSpectra = new Matrix([[1, 0, 1, 0]]);
+let composition = new Matrix([[ 1, 2, 3, 2, 1]]);
+
+// matrix = composition.transpose().mmul(pureSpectra)
+let matrix = new Matrix([
+  [1, 0, 1, 0],
+  [2, 0, 2, 0],
+  [3, 0, 3, 0],
+  [2, 0, 2, 0],
+  [1, 0, 1, 0],
 ]);
 
-let v = A.mmul(S);
 const options = {
   maximumIteration: 200,
   phaseRatio: 0.4,
 };
-const result = ngmca(v, 2, options);
-// result has properties A and S, the estimated matrices
+const result = ngmca(matrix, 1, options);
+const { A, S } = result;
+const estimatedMatrix = A.mmul(S);
+const diff = Matrix.sub(matrix, estimatedMatrix);
 ```
+
+The result has the matrices A and S, the estimated matrices of compositions and pureSpectra respectively. It's possible that the matrices A and S have not the same scale than pureSpectra and composition matrices because of AS has an infinity of combination to get the target matrix.
+
 ## License
-  [MIT](./LICENSE)
+
+[MIT](./LICENSE)

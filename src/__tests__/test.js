@@ -21,12 +21,12 @@ describe('NMF test', () => {
 
     const options = {
       maximumIteration: 100,
-      phaseRatio: 0.4,
+      phaseRatio: 0.8,
     };
 
     const result = ngmca(v, 2, options);
     const w0 = result.A;
     const h0 = result.S;
-    expect(w0.mmul(h0).to2DArray()).toBeDeepCloseTo(v.to2DArray(), 1);
+    expect(w0.mmul(h0).to2DArray()).toBeDeepCloseTo(v.to2DArray(), 0);
   });
 });

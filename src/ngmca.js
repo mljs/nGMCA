@@ -9,9 +9,9 @@ import { updateMatrixS } from './stages/updateMatrixS';
 
 /**
  * Performing non-negative matrix factorization solving argmin_(A >= 0, S >= 0) 1 / 2 * ||Y - AS||_2^2 + lambda * ||S||_1
- * @param {*} originalMatrix - Matrix to be separated.
+ * @param {Matrix||Array<Array>} originalMatrix - Matrix to be separated.
  * @param {Number} rank - The maximum number of linearly independent column/row vectors in the matrix.
- * @param {Object} options - Options of ngmca factorization method.
+ * @param {Object} [options = {}] - Options of ngmca factorization method.
  * @param {Number} [options.maximumIteration = 500] - Maximum number of iterations.
  * @param {Number} [options.maxFBIteration = 80] - Maximum number of iterations of the Forward-Backward subroutine.
  * @param {Object} [options.randGenerator = Math.random] - Random number generator for the subroutine of initialization.

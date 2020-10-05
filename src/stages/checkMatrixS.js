@@ -24,7 +24,10 @@ export function checkMatrixS(data, originalMatrix) {
   // if there than just one zero or NaN element
   // run a NMF with the residual matrix Y - A*B
   if (indices.length > 0) {
-    let temp = fastExtractNMF(originalMatrix.mmul(A.mmul(S)), indices.length);
+    let temp = fastExtractNMF(
+      originalMatrix.clone().subM(A.mmul(S)),
+      indices.length,
+    );
     for (let i = 0; i < indices.length; i++) {
       for (let j = 0; j < S.columns; j++) {
         S.set(indices[i], j, temp.S.get(i, j));
