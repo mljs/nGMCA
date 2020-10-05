@@ -24,7 +24,7 @@ import { Matrix } from 'ml-matrix';
 import { ngmca } from 'ml-ngmca';
 
 let pureSpectra = new Matrix([[1, 0, 1, 0]]);
-let composition = new Matrix([[ 1, 2, 3, 2, 1]]);
+let composition = new Matrix([[1, 2, 3, 2, 1]]);
 
 // matrix = composition.transpose().mmul(pureSpectra)
 let matrix = new Matrix([
@@ -41,6 +41,41 @@ const options = {
 };
 const result = ngmca(matrix, 1, options);
 const { A, S } = result;
+console.log(`A = ${A.to2DArray()} S =${S.to2DArray()}`);
+/**
+A = [
+    [ 0.22941573387056177 ],
+    [ 0.45883146774112354 ],
+    [ 0.6882472016116853 ],
+    [ 0.45883146774112354 ],
+    [ 0.22941573387056177 ]
+  ]
+S = [ [ 4.358898943540674, 0, 4.358898943540674, 0 ] ]
+
+if you reescale both S maxS and A with 1/maxS.
+*/
+
+let maxByRow = [];
+for (let i = 0; i < S.rows; i++) {
+  maxByRow.push(S.maxRow(i));
+}
+
+S.scale('row', { scale: maxByRow });
+A.scale('column', {
+  scale: maxByRow.map((e) => 1 / e),
+});
+
+/**
+S = [ [ 1, 0, 1, 0 ] ]
+A = [
+  [1.0000000000000002],
+  [2.0000000000000004],
+  [3.0000000000000004],
+  [2.0000000000000004],
+  [1.0000000000000002]
+  ]
+*/
+
 const estimatedMatrix = A.mmul(S);
 const diff = Matrix.sub(matrix, estimatedMatrix);
 ```
