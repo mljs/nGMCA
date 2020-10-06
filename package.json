@@ -2,14 +2,14 @@
   "name": "ml-ngmca",
   "version": "0.0.2",
   "description": "non-negative Generalized Morphological Component Analysis",
-  "main": "lib/index.js",
-  "module": "src/index.js",
+  "main": "lib/ngmca.js",
+  "module": "src/ngmca.js",
   "files": [
     "lib",
     "src"
   ],
   "scripts": {
-    "build": "rollup -c && cheminfo-build --root NGCMA",
+    "build": "rollup -c && cheminfo-build --root nGMCA",
     "eslint": "eslint src",
     "eslint-fix": "npm run eslint -- --fix",
     "prepublishOnly": "rollup -c",
@@ -22,7 +22,7 @@
     "url": "git+https://github.com/mljs/nGMCA.git"
   },
   "keywords": [],
-  "author": "jobo322 &lt;jose.bolanos@correounivalle.edu.co&gt;",
+  "author": "jobo322 <jose.bolanos@correounivalle.edu.co>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mljs/nGMCA/issues"
