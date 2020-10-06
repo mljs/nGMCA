@@ -6,6 +6,7 @@
 <p align="center">
   A tool for non-negative matrix factorization.
 </p>
+
 ## Instalation
 `$ npm install ml-ngmca `
 
