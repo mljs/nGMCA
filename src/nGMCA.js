@@ -23,7 +23,7 @@ import { updateMatrixS } from './stages/updateMatrixS';
  * @param {Boolean} [options.useTranspose = false] - if true the originalMatrix is transposed.
  */
 
-export function ngmca(originalMatrix, rank, options = {}) {
+export function nGMCA(originalMatrix, rank, options = {}) {
   const {
     maximumIteration = 500,
     maxFBIteration = 80,
