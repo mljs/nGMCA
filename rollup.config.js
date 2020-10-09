@@ -1,7 +1,7 @@
 export default {
-  input: 'src/ngmca.js',
+  input: 'src/nGMCA.js',
   output: {
     format: 'cjs',
-    file: 'lib/ngmca.js'
-  }
+    file: 'lib/nGMCA.js',
+  },
 };

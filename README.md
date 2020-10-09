@@ -22,7 +22,7 @@ You will be able to separate the components of a mixture if you have a series of
 
 ```js
 import { Matrix } from 'ml-matrix';
-import { ngmca } from 'ml-ngmca';
+import { nGMCA } from 'ml-ngmca';
 
 let pureSpectra = new Matrix([[1, 0, 1, 0]]);
 let composition = new Matrix([[1, 2, 3, 2, 1]]);
@@ -40,7 +40,7 @@ const options = {
   maximumIteration: 200,
   phaseRatio: 0.4,
 };
-const result = ngmca(matrix, 1, options);
+const result = nGMCA(matrix, 1, options);
 const { A, S } = result;
 console.log(`A = ${A.to2DArray()} S =${S.to2DArray()}`);
 /**
