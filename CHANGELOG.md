@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/mljs/nGMCA/compare/v0.1.4...v0.2.0) (2020-10-10)
+
+
+### Features
+
+* add documentation build action ([4e12e46](https://www.github.com/mljs/nGMCA/commit/4e12e4601063406c33a92c2413610e676b3d8e0f))
+
 ### [0.1.4](https://www.github.com/mljs/nGMCA/compare/v0.1.3...v0.1.4) (2020-10-10)
 
 

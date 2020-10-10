@@ -1,6 +1,6 @@
 {
   "name": "ml-ngmca",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "non-negative Generalized Morphological Component Analysis",
   "main": "lib/nGMCA.js",
   "module": "src/nGMCA.js",
