@@ -98,6 +98,9 @@ const estimatedMatrix = A.mmul(S);
 const diff = Matrix.sub(matrix, estimatedMatrix);
 ```
 
+
+Here is a second example: 
+
 ```js
 let matrix = new Matrix([
   [0, 0, 1, 1, 1],
@@ -125,7 +128,7 @@ console.log(`A = ${A} S =${S}`);
 S = [
   [
     9.86e-32 9.86e-32 1.41421 1.41421 1.41421
-    2.82843 2.82843 2.82843 0        0       
+    2.82843  2.82843  2.82843 0       0       
   ]
 ]
 note: 9.86e-32 and 2.26e-17 is practically zero
