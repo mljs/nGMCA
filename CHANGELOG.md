@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.2.1](https://www.github.com/mljs/nGMCA/compare/v0.2.0...v0.2.1) (2020-10-10)
+
+
+### Bug Fixes
+
+* use BOT_TOKEN in release ([b9c50f7](https://www.github.com/mljs/nGMCA/commit/b9c50f702b3fcf69d5ff5dd8db9d71b88529790b))
+
 ## [0.2.0](https://www.github.com/mljs/nGMCA/compare/v0.1.4...v0.2.0) (2020-10-10)
 
 
