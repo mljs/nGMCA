@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.2.2](https://www.github.com/mljs/nGMCA/compare/v0.2.1...v0.2.2) (2020-10-10)
+
+
+### Bug Fixes
+
+* remove usell docs (now on gh-parges) ([d4d4318](https://www.github.com/mljs/nGMCA/commit/d4d4318328975a9d649f155ab968b86e3851a0c7))
+
 ### [0.2.1](https://www.github.com/mljs/nGMCA/compare/v0.2.0...v0.2.1) (2020-10-10)
 
 
