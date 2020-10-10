@@ -1,3 +1,5 @@
+# Changelog
+
 ### [0.1.3](https://github.com/mljs/nGMCA/compare/v0.1.2...v0.1.3) (2020-10-10)
 
 ## [0.1.2](https://github.com/mljs/nGMCA/compare/v0.1.1...v0.1.2) (2020-10-09)
