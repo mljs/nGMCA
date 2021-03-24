@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/mljs/nGMCA/compare/v0.2.2...v1.0.0) (2021-03-24)
+
+
+### Bug Fixes
+
+* update dependencies ([66f1cdf](https://www.github.com/mljs/nGMCA/commit/66f1cdf1f05a72611bdf258b0ffe141d664108f2))
+
 ### [0.2.2](https://www.github.com/mljs/nGMCA/compare/v0.2.1...v0.2.2) (2020-10-10)
 
 
