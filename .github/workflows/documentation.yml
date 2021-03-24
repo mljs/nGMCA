@@ -1,11 +1,12 @@
-name: Build documentation
+name: Deploy documentation.js on GitHub pages
 
 on:
+  workflow_dispatch:
   release:
     types: [published]
 
 jobs:
-  documentation:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
